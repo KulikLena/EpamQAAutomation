@@ -3,10 +3,9 @@ package epamQAAutomation;
 import java.util.ArrayList;
 import java.util.List;
 
-/* Предметная область - сметная документация. Принимаем упрощенную модель составления сметной документации,
- * которая заключается в следующем : сметы на объект (Estimates) состоят из сводного сметного расчета 
- * (Consolidated Estimate) и локальных смет (Local estimates). В свою очередь сводный сметный расчет состоит 
- * из локальных смет, а локальные сметы состоят из модулей (Modules)
+/*РџСЂРµРґРјРµС‚РЅР°СЏ РјРѕРґРµР»СЊ - СЃРјРµС‚РЅР°СЏ РґРѕРєСѓРјРµРЅС‚Р°С†РёСЏ РЅР° СЃС‚СЂРѕРёС‚РµР»СЊСЃС‚РІРѕ РѕР±СЉРµРєС‚Р°, СЃРѕСЃС‚РѕСЏС‰Р°СЏ РёР· СЃРІРѕРґРЅРѕР№ СЃРјРµС‚С‹ (ConsolidatedEstimate)
+ * Р»РѕРєР°Р»СЊРЅС‹С… СЃРјРµС‚ (LocalEstimates) Рё РјРѕРґСѓР»РµР№ (Modules). РЎРІРѕРґРЅР°СЏ СЃРјРµС‚Р° (РµРґРёРЅСЃС‚РІРµРЅРЅР°СЏ РЅР° РѕР±СЉРµРєС‚) СЃРѕСЃС‚РѕРёС‚ РёР· СЃРїРёСЃРєР° Р»РѕРєР°Р»СЊРЅС‹С… СЃРјРµС‚.
+ * Р›РѕРєР°Р»СЊРЅС‹Рµ СЃРјРµС‚С‹, РІ СЃРІРѕСЋ РѕС‡РµСЂРµРґСЊ, СЃРѕСЃС‚РѕСЏС‚ РёР· РјРѕРґСѓР»РµР№. 
  *  */
 
 public class Estimates implements Calculation {
@@ -21,7 +20,6 @@ public class Estimates implements Calculation {
 		priceLevel = "01.01.2001";
 	}
 
-	// геттеры и сеттеры
 	public String getNameOfTheObject() {
 		return nameOfTheObject;
 	}
@@ -38,27 +36,34 @@ public class Estimates implements Calculation {
 		this.priceLevel = priceLevel;
 	}
 
-	// формирование сметы (сводной или локальной) в виде списка элемнтов (локальных
-	// смет или модулей)
+	// РјРµС‚РѕРґ, С„РѕСЂРјРёСЂСѓСЋС‰РёР№ СЃРјРµС‚Сѓ
 	public List<Estimates> composition(List<Estimates> items) {
 		return null;
 	}
 
-	// пересчет результата из белорусских рублей в валюту
-	public double currencyRecosting(Estimates ob) throws Exception {
-		List<Estimates> list = new ArrayList<Estimates>();
-		List<Estimates> result = ob.composition(list);
-		double cost = summation(list);
-		double costInStandartUnit = cost / ob.exchangeRate;
-		return costInStandartUnit;
+	// РјРµС‚РѕРґ, РїСЂРѕРёР·РІРѕРґСЏС‰РёР№ РїРµСЂРµСЃС‡РµС‚ СЃСѓРјРјР°СЂРЅРѕРіРѕ СЂРµР·СѓР»СЊС‚Р°С‚Р° РїРѕ РєР°Р¶РґРѕР№ СЃРјРµС‚Рµ РІ СѓСЃР»РѕРІРЅС‹Рµ
+	// РµРґРёРЅРёС†С‹
+	public double currencyRecosting(Estimates ob, boolean t) throws MyException {
+		if (t) {
+			List<Estimates> list = new ArrayList<Estimates>();
+			List<Estimates> result = ob.composition(list);
+			double cost = summation(list);
+			double costInStandartUnit = cost / ob.exchangeRate;
+			System.out.println("РџСЂРѕРёР·РІРµРґРµРЅ РїРµСЂРµСЃС‡РµС‚ РІ СѓСЃР»РѕРІРЅС‹Рµ РµРґРёРЅРёС†С‹");
+			return costInStandartUnit;
+		} else
+			throw new MyException("Exception");
+
 	}
 
+	// РјРµС‚РѕРґ РёРЅС‚РµСЂС„РµР№СЃР° Calculation
 	@Override
-	public double summation (List<Estimates> list) {
+	public double summation(List<Estimates> list) {
 
 		return 0;
 	}
 
+	// РјРµС‚РѕРґ РёРЅС‚РµСЂС„РµР№СЃР° Calculation
 	@Override
 	public double[] relativeWeight(List<Estimates> list) {
 

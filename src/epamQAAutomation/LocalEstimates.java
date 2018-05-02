@@ -7,8 +7,8 @@ public class LocalEstimates extends Estimates implements Calculation {
 	
 	@Override
 	public List<Estimates> composition(List<Estimates> modules) {
-		// формируем локальные сметы из модулей
-		List<Estimates> list = new ArrayList<Estimates>();
+		// С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ Р»РѕРєР°Р»СЊРЅРѕР№ СЃРјРµС‚С‹ РёР· СЃРїРёСЃРєР° РјРѕРґСѓР»РµР№
+		List<Estimates> list = new ArrayList<Estimates>(modules);
 		return 	list;
 	}
 
@@ -16,7 +16,7 @@ public class LocalEstimates extends Estimates implements Calculation {
 	public double summation(List<Estimates> list) {
 		double sum = 0;
 		for (int i = 0; i < list.size(); i++) {
-			// производим суммирование по каждому модулю из списка
+			// Р·РґРµСЃСЊ РїСЂРѕРёСЃС…РѕРґРёС‚ СЃСѓРјРјРёСЂРѕРІР°РЅРёРµ РєРѕРЅРєСЂРµС‚РЅС‹С… РїРѕР»РµР№ 
 		}
 		return sum;
 
@@ -26,7 +26,7 @@ public class LocalEstimates extends Estimates implements Calculation {
 	public double[] relativeWeight(List<Estimates> list) {
 		double[] relativeWeights = new double[list.size()];
 		for (int i = 0; i < list.size(); i++) {
-			// вычисляем удельный вес каждого модуля
+			// РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ СЂР°СЃС‡РµС‚ СѓРґРµР»СЊРЅРѕРіРѕ РІРµСЃР° РєР°Р¶РґРѕР№ Р»РѕРєР°Р»СЊРЅРѕР№ СЃРјРµС‚С‹
 		}
 		return relativeWeights;
 	}

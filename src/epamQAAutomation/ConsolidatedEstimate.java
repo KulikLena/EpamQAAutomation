@@ -18,8 +18,8 @@ public final class ConsolidatedEstimate extends Estimates implements Calculation
 
 	@Override
 	public List<Estimates> composition(List<Estimates> items) {
-		// формируем сводную смету из списка локальных смет
-		List<Estimates> list = new ArrayList<Estimates>();
+		// С„РѕСЂРјРёСЂРѕРІР°РЅРёРµ СЃРІРѕРґРЅРѕР№ СЃРјРµС‚С‹ РёР· СЃРїРёСЃРєР° Р»РѕРєР°Р»СЊРЅС‹С… СЃРјРµС‚
+		List<Estimates> list = new ArrayList<Estimates>(items);
 		return list;
 	}
 
@@ -27,7 +27,7 @@ public final class ConsolidatedEstimate extends Estimates implements Calculation
 	public double summation(List<Estimates> list) {
 		double sum = 0;
 		for (int i = 0; i < list.size(); i++) {
-			// производим суммирование по каждой локальной смете из списка
+			// Р·РґРµСЃСЊ РїСЂРѕРёСЃС…РѕРґРёС‚ СЃСѓРјРјРёСЂРѕРІР°РЅРёРµ РєРѕРЅРєСЂРµС‚РЅС‹С… РїРѕР»РµР№ 
 		}
 		return sum;
 	}
@@ -36,7 +36,7 @@ public final class ConsolidatedEstimate extends Estimates implements Calculation
 	public double[] relativeWeight(List<Estimates> list) {
 		double[] relativeWeights = new double[list.size()];
 		for (int i = 0; i < list.size(); i++) {
-			// вычисляем удельный вес каждой локальной сметы
+			// РїСЂРѕРёР·РІРѕРґРёС‚СЃСЏ СЂР°СЃС‡РµС‚ СѓРґРµР»СЊРЅРѕРіРѕ РІРµСЃР° РєР°Р¶РґРѕР№ Р»РѕРєР°Р»СЊРЅРѕР№ СЃРјРµС‚С‹
 		}
 		return relativeWeights;
 	}

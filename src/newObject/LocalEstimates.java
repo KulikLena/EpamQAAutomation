@@ -1,7 +1,10 @@
-package epamQAAutomation;
+package newObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import source.Calculation;
+import source.Estimates;
 
 public class LocalEstimates extends Estimates implements Calculation {
 	

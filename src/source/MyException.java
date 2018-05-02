@@ -1,7 +1,7 @@
-package epamQAAutomation;
+package source;
 
 public class MyException extends Exception {
-	static String message;
+	public static String message;
 
 	public MyException(String someText) {
 		someText = message;

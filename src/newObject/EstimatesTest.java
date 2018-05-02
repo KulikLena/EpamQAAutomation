@@ -1,7 +1,10 @@
-package epamQAAutomation;
+package newObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import source.Estimates;
+import source.MyException;
 
 public class EstimatesTest {
 

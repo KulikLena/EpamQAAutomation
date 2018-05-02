@@ -1,4 +1,4 @@
-package epamQAAutomation;
+package source;
 
 import java.util.List;
 

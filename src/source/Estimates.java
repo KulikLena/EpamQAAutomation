@@ -1,4 +1,4 @@
-package epamQAAutomation;
+package source;
 
 import java.util.ArrayList;
 import java.util.List;
